@@ -11,6 +11,8 @@ class ContentModel: ObservableObject {
     
     @Published var modules = [Module]()
     
+    var styleData: Data?
+    
     init() {
         getLocalData()
     }
@@ -35,6 +37,20 @@ class ContentModel: ObservableObject {
         catch {
             
             // Log error
+            print(error)
+        }
+        
+        // Parse the style data
+        let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")
+        
+        do {
+            
+            // Read the file into a data object
+            let styleData = try Data(contentsOf: styleUrl!)
+            
+            self.styleData = styleData
+        }
+        catch {
             print(error)
         }
     }
