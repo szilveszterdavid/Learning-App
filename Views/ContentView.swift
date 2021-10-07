@@ -20,10 +20,12 @@ struct ContentView: View {
                 // Confirm that currentModule is set
                 if model.currentModule != nil {
                     
-                    ForEach(model.currentModule!.content.lessons) { lesson in
+                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
+                        
+                        let lesson = model.currentModule!.content.lessons[index]
                         
                         // Lesson card
-                        ZStack {
+                        ZStack (alignment: .leading) {
                             
                             Rectangle()
                                 .foregroundColor(.white)
@@ -31,23 +33,29 @@ struct ContentView: View {
                                 .shadow(radius: 5)
                                 .frame(height: 66)
                             
-                            HStack {
+                            HStack (spacing: 30) {
                                 
-                                Text("1")
+                                Text(String(index + 1))
+                                    .bold()
                                 
-                                VStack {
-                                    Text("Variables")
-                                    Text("minutes")
+                                VStack (alignment: .leading){
+                                    Text(lesson.title)
+                                        .bold()
+                                    Text(lesson.duration)
                                 }
                                 
                             }
+                            .padding()
                             
                         }
+                        .padding(.bottom, 10)
                         
                     }
                 }
                 
             }
+            .padding()
+            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
             
         }
         
