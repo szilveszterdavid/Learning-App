@@ -19,6 +19,7 @@
 		E7EAA5D2270E233B007C18E2 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = E7EAA5D0270E233B007C18E2 /* style.html */; };
 		E7EAA5D4270E2786007C18E2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EAA5D3270E2786007C18E2 /* Models.swift */; };
 		E7EAA5D6270F1070007C18E2 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EAA5D5270F1070007C18E2 /* HomeViewRow.swift */; };
+		E7EAA5DA270F56F0007C18E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EAA5D9270F56EF007C18E2 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E7EAA5D0270E233B007C18E2 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = style.html; path = "M5L3 Resources/data/style.html"; sourceTree = SOURCE_ROOT; };
 		E7EAA5D3270E2786007C18E2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E7EAA5D5270F1070007C18E2 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
+		E7EAA5D9270F56EF007C18E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				E7EAA5A0270E0F86007C18E2 /* HomeView.swift */,
 				E7EAA5D5270F1070007C18E2 /* HomeViewRow.swift */,
+				E7EAA5D9270F56EF007C18E2 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				E7EAA5A1270E0F86007C18E2 /* HomeView.swift in Sources */,
 				E7EAA5D6270F1070007C18E2 /* HomeViewRow.swift in Sources */,
+				E7EAA5DA270F56F0007C18E2 /* ContentView.swift in Sources */,
 				E7EAA59F270E0F86007C18E2 /* Learning_App.swift in Sources */,
 				E7EAA5CE270E1132007C18E2 /* ContentModel.swift in Sources */,
 				E7EAA5D4270E2786007C18E2 /* Models.swift in Sources */,
