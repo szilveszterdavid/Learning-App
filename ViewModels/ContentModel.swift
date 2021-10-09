@@ -97,4 +97,9 @@ class ContentModel: ObservableObject {
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
     }
     
+    func hasNextLesson() -> Bool {
+        
+        return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    
 }
