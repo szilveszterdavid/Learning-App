@@ -44,9 +44,9 @@ struct HomeView: View {
                                 
                                 NavigationLink(
                                     destination:
-                                        ContentView()
+                                        TestView()
                                                 .onAppear(perform: {
-                                                    model.beginModule(module.id)
+                                                    model.beginTest(module.id)
                                                 }),
                                     tag: module.id,
                                     selection: $model.currentTestSelected,
@@ -55,6 +55,11 @@ struct HomeView: View {
                                         // Test Card
                                         HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
                                 })
+                                
+                                NavigationLink(destination: EmptyView()) {
+                                    EmptyView()
+                                }
+                                 
                             }
                         }
                     }
