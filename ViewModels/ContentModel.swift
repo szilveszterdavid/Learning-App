@@ -26,7 +26,7 @@ class ContentModel: ObservableObject {
     var currentQuestionIndex = 0
     
     // Current lesson explanation
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
     // Current selected content and test
     @Published var currentContentSelected: Int?
@@ -107,7 +107,7 @@ class ContentModel: ObservableObject {
         
         // Set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        lessonDescription = addStyling(currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
     }
     
     func nextLesson() {
@@ -120,7 +120,7 @@ class ContentModel: ObservableObject {
             
             // Set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            lessonDescription = addStyling(currentLesson!.explanation)
+            codeText = addStyling(currentLesson!.explanation)
         }
         else {
             
@@ -148,7 +148,7 @@ class ContentModel: ObservableObject {
             currentQuestion = currentModule!.test.questions[currentQuestionIndex]
             
             // Set the question content
-            lessonDescription = addStyling(currentQuestion!.content)
+            codeText = addStyling(currentQuestion!.content)
         }
         
     }
