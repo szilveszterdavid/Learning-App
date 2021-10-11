@@ -44,8 +44,31 @@ struct TestView: View {
                                 
                                 ZStack {
                                     
-                                    RectangleCard(color: index == selectedAnswerIndex ? .gray : .white)
-                                        .frame(height: 48)
+                                    if submitted == false {
+                                        RectangleCard(color: index == selectedAnswerIndex ? .gray : .white)
+                                            .frame(height: 48)
+                                    }
+                                    else {
+                                        
+                                        // Answer has been submitted
+                                        if (index == selectedAnswerIndex && index == model.currentQuestion!.correctIndex) || index == model.currentQuestion!.correctIndex {
+                                            
+                                            // User has selected the right answer
+                                            
+                                            RectangleCard(color: Color.green)
+                                                .frame(height: 48)
+                                        }
+                                        else if index == selectedAnswerIndex && index != model.currentQuestion!.correctIndex {
+                                            
+                                            // User has selected the wrong answer
+                                            
+                                            RectangleCard(color: Color.red)
+                                                .frame(height: 48)
+                                        } else {
+                                            RectangleCard(color: .white)
+                                                .frame(height: 48)
+                                        }
+                                    }
                                     Text(model.currentQuestion!.answers[index])
                                 }
                             }
