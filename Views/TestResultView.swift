@@ -10,6 +10,7 @@ import SwiftUI
 struct TestResultView: View {
     
     @EnvironmentObject var model: ContentModel
+    var numCorrect: Int
     
     var body: some View {
         
@@ -18,7 +19,7 @@ struct TestResultView: View {
             Text("Doing great!")
                 .font(.title)
             Spacer()
-            Text("You got X out of X questions")
+            Text("You got \(numCorrect) out of \(model.currentModule?.test.questions.count ?? 0) questions")
             Spacer()
             Button {
                 
@@ -36,13 +37,8 @@ struct TestResultView: View {
                         .foregroundColor(.white)
                 }
             }
+            .padding()
             Spacer()
         }
-    }
-}
-
-struct TestResultView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestResultView()
     }
 }

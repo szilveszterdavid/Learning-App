@@ -125,7 +125,7 @@ struct TestView: View {
         else {
             
             // If current question is nil, we show the result view
-            TestResultView()
+            TestResultView(numCorrect: numCorrect)
             
         }
     }
