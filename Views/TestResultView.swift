@@ -14,6 +14,10 @@ struct TestResultView: View {
     
     var resultHeading: String {
         
+        guard model.currentModule != nil else {
+            return ""
+        }
+        
         let percentage = Double(numCorrect) / Double(model.currentModule!.test.questions.count)
         
         if percentage > 0.5 {
@@ -31,7 +35,7 @@ struct TestResultView: View {
         
         VStack {
             Spacer()
-            Text("Doing great!")
+            Text(resultHeading)
                 .font(.title)
             Spacer()
             Text("You got \(numCorrect) out of \(model.currentModule?.test.questions.count ?? 0) questions")
