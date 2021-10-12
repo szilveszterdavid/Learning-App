@@ -12,6 +12,21 @@ struct TestResultView: View {
     @EnvironmentObject var model: ContentModel
     var numCorrect: Int
     
+    var resultHeading: String {
+        
+        let percentage = Double(numCorrect) / Double(model.currentModule!.test.questions.count)
+        
+        if percentage > 0.5 {
+            return "Awesome!"
+        }
+        else if percentage > 0.2 {
+            return "Doing great!"
+        }
+        else {
+            return "Keep learning!"
+        }
+    }
+    
     var body: some View {
         
         VStack {
